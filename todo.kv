@@ -1,0 +1,52 @@
+Interface:
+    Screen:
+        name:"Main Screen"
+        BoxLayout: 
+            orientation:"vertical"
+            padding:dp(10)
+            spacing:dp(30)
+            Label:
+                text:"To-do App"
+                font_size:"32sp"
+                font_name:"robotoblack.ttf"
+                size_hint:1,None
+                height:dp(80)
+            ScrollView:
+                on_scroll_y:True
+                GridLayout:
+                    id:gridLayout
+                    cols:1
+                    spacing:dp(10)
+                    size_hint_y:None
+                    height:self.minimum_height                             
+            
+            Button:
+                text:"Add"
+                background_normal:"red.png"
+                font_size:"32sp"
+                size_hint:1,None
+                height:dp(60)
+                on_press:root.show_popup()
+
+    Screen:
+        name:"Details Screen"
+        BoxLayout:
+            orientation:"vertical"
+            padding:dp(10)
+            spacing:dp(10)
+            Label:
+                id:noticeTitle
+                font_name:"robotoblack.ttf"
+                text: "Notice Title"
+                size_hint_y:None
+                height:dp(80)
+            TextInput:
+                id: inputData
+            Button:
+                size_hint_y:None
+                height:dp(80)
+                text: "Back"
+                font_size:"32sp"
+                background_normal:"red.png"
+                on_press:root.back_btn()
+                font_name:"robotolight.ttf"
